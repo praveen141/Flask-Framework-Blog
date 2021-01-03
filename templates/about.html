@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url(' {{ url_for('static',filename='img/about-bg.jpg') }}   ')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>About Me</h1>
+            <span class="subheading">This is what I do.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Life is very much scattered and cluster of thoughts</p>
+        <p>Things are not complicated but doing lots of copy paste in mind. we forgot how to delete them. So now you can guess! Life is now complicated</p>
+        <p>Our body is a magic itself. It knows how to delete bad things from body and mind. But it needs time and ample rest.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+{% endblock %}

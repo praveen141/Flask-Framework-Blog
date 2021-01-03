@@ -1,0 +1,23 @@
+{
+
+	"params":
+	{
+	    "local_server":"True",
+	    "local_uri": "mysql+pymysql://root:@localhost/codingthunder",
+	    "prod_uri" : "mysql+pymysql://root:@localhost/codingthunder",
+	    "fb_url" : "https://facebook.com/",
+	    "tw_url" : "https://notesformyselfpython.blogspot.com/",
+	    "yu_url" : "https://youtube.com/",
+	    "blog_title" : "Open Window, Let air come",
+	    "top_left" : "Kitchen is an art",
+	    "gmail-user" : "praveen.gupta141@gmail.com",
+	    "gmail-password" : "hehe",
+	    "no_of_posts" : 2,
+	    "login_image" : "login.svg",
+	    "admin_user" : "praveen",
+	    "admin_password" : "india",
+	    "upload_location" : "/home/praveen/Downloads/cleanblog/static/img",
+	    "api_key" : "bd468662db1cfc6677641063ea0438656502e034",
+	    "fix_city" : "Pune"
+	}
+}

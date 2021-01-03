@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url(' {{ url_for('static',filename='img/about-bg.jpg') }}   ')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Air Quality Index</h1>
+            <span class="subheading">Check yours area air quality index</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <form name="sentMessage" id="contactForm" style="text-align:center;" action="/aqi" method="post" novalidate>
+  <div class="form-group row" style="text-align:center;">
+    
+    <div class="col-xs-3" >
+    
+    <label for="cityname" >City</label>
+    <input type="cityname" class="form-control" style="text-align:center;" id="cityname" placeholder="city" name='cityname'>
+    </div>
+  </div>
+  <button style="text-align:center;"></button> 
+  <button type="submit" class="btn btn-primary" id="sendMessageButton" >Submit</button>
+  
+  </form>
+  <p>For example you can see {{city_csv}} has air quality of {{aqi_csv}}  and temperature of {{aqi_temp}}</p>
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+  <!-- Main Content -->
+  {% set f = method %}
+  {% if f=="NULL" %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+      {% set fname = aqi %}
+      <p> You have entered : <b>{{city}} </b></p>
+       {% if fname=="NULL" %}
+        <p>Sorry this city does not exist. Please try again </p>
+       {% else %}
+          {% if fname < 100  %}
+            <p>You have air quality index of <b>{{fname}} </b> and it is <b>Heaven</b></p> 
+            <p>Facts taken at this timeinterval : <b>{{time}}</b></p>
+          {% else %}
+          <p>You have air quality index of <b>{{fname}} </b> and it is <b>Hell </b></p>
+          <p>Facts taken at this timeinterval : {{time}}  </p>
+          {% endif %} 
+
+<img src="{{ url_for('static',filename='img/aqi.png') }}" class="img-fluid" alt="Responsive image">         
+  
+       {% endif %}
+  {% else %}
+    <p> </p>
+  {% endif %}  
+    </div>
+  
+</div>      
+
+</div>
+
+  <hr>
+{% endblock %}

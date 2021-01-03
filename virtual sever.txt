@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+		ServerName 15.207.255.121
+		ServerAdmin praveen.gupta141@gmail.com
+		WSGIScriptAlias / /var/www/cwh/cwh.wsgi
+		<Directory /var/www/cwh/cwh/>
+			Order allow,deny
+			Allow from all
+		</Directory>
+		Alias /static /var/www/cwh/cwh/static
+		<Directory /var/www/cwh/cwh/static/>
+			Order allow,deny
+			Allow from all
+		</Directory>
+		ErrorLog ${APACHE_LOG_DIR}/error.log
+		LogLevel warn
+		CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
